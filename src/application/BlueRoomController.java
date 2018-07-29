@@ -1,41 +1,52 @@
 package application;
 
-import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-
 import java.io.IOException;
+import java.net.URL;
+import java.util.ResourceBundle;
 
 import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseButton;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
-public class BlueRoomController {
+public class BlueRoomController implements Initializable{	
 	@FXML
-	private VBox settingsBox;
+	private AnchorPane otherPane;
 	
 	@FXML
-	private Button redRoomBtn;
+	private AnchorPane mainPane;
 	
 	@FXML
-	private Button blueRoomBtn;
+	private VBox settingsMenu;
+	
+	@FXML
+	private ImageView helpImage;
 	
 	private boolean settingsState = false;
 	
-	public void makeSettingsVisible(ActionEvent event) {
-		if (settingsState == false) {
-			settingsBox.setVisible(true);
-			settingsState = true;
-		}else {
-			settingsBox.setVisible(false);
-			settingsState = false;
-		}
-	}
 	
-	public void toGreenRoom(ActionEvent event) throws IOException {
+	
+	public void goToFinal(ActionEvent event) throws IOException{
+		Parent finalRoomParent = FXMLLoader.load(getClass().getResource("/application/FinalRoom.fxml"));
+		Scene finalRoom = new Scene(finalRoomParent);
+		
+		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+		window.setScene(finalRoom);
+		window.show();
+	}
+	public void goToGreen(ActionEvent event) throws IOException{
 		Parent greenRoomParent = FXMLLoader.load(getClass().getResource("/application/GreenRoom.fxml"));
 		Scene greenRoom = new Scene(greenRoomParent);
 		
@@ -44,16 +55,45 @@ public class BlueRoomController {
 		window.show();
 	}
 	
-	public void toRedRoom(ActionEvent event) throws IOException {
-		Parent redRoomParent = FXMLLoader.load(getClass().getResource("/application/RedRoom.fxml"));
-		Scene redRoom = new Scene(redRoomParent);
+	//settings methods
+	public void showSettingsMenu(ActionEvent event) {
+		if (settingsState == false) {
+			otherPane.setVisible(true);
+			settingsMenu.setVisible(true);
+			mainPane.setOpacity(0.2);
+			settingsState = true;
+		}else {
+			otherPane.setVisible(false);
+			settingsMenu.setVisible(false);
+			mainPane.setOpacity(1);
+			settingsState = false;
+			helpImage.setVisible(false);
+		}
+		
+	}
+	
+	public void goToMain(ActionEvent event) throws IOException{
+		Parent homeParent = FXMLLoader.load(getClass().getResource("/application/Main.fxml"));
+		Scene home = new Scene(homeParent);
 		
 		Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-		window.setScene(redRoom);
+		window.setScene(home);
 		window.show();
 	}
 	
-	public void closeApp(ActionEvent event) {
+	public void showHelp(ActionEvent event){
+		helpImage.setVisible(true);
+	}
+	
+	public void hideHelp(MouseEvent mouseEvent){
+		helpImage.setVisible(false);
+	}
+	
+	public void exitGame(ActionEvent event) {
 		System.exit(0);
+	}
+
+	@Override
+	public void initialize(URL location, ResourceBundle resources) {		
 	}
 }

@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="640.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BlueRoomController">
+<AnchorPane prefHeight="640.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.BlueRoomController">
    <children>
-      <AnchorPane prefHeight="675.0" prefWidth="900.0">
+      <AnchorPane fx:id="mainPane" prefHeight="640.0" prefWidth="960.0">
          <children>
             <ImageView fitHeight="640.0" fitWidth="960.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../img/Unknown.jpeg" />
-               </image></ImageView>
-            <ButtonBar prefHeight="25.0" prefWidth="960.0">
-              <buttons>
-                <Button mnemonicParsing="false" onAction="#makeSettingsVisible" styleClass="settingsBtn" stylesheets="@application.css">
+                  <Image url="@../img/Blue-Room.png" />
+               </image>
+            </ImageView>
+            <Button layoutX="817.0" layoutY="442.0" mnemonicParsing="false" onAction="#goToFinal" text="Go to Final Room" />
+            <ButtonBar prefHeight="35.0" prefWidth="960.0">
+               <buttons>
+                  <Button mnemonicParsing="false" onAction="#showSettingsMenu" prefHeight="35.0" prefWidth="25.0" styleClass="settingsBtn" stylesheets="@application.css">
                      <graphic>
                         <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                            <image>
@@ -29,45 +29,42 @@
                         </ImageView>
                      </graphic>
                   </Button>
-              </buttons>
+               </buttons>
             </ButtonBar>
-            <HBox layoutX="180.0" layoutY="580.0" prefHeight="50.0" prefWidth="600.0">
+            <Button layoutX="37.0" layoutY="435.0" mnemonicParsing="false" onAction="#goToGreen" text="Go to Green Room" />
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="otherPane" prefHeight="640.0" prefWidth="960.0" visible="false">
+         <children>
+            <ButtonBar prefHeight="35.0" prefWidth="960.0">
+               <buttons>
+                  <Button mnemonicParsing="false" onAction="#showSettingsMenu" prefHeight="35.0" prefWidth="25.0" styleClass="settingsBtn" stylesheets="@application.css">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/Gears-PNG-File.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </buttons>
+            </ButtonBar>
+            <VBox fx:id="settingsMenu" alignment="TOP_CENTER" layoutX="380.0" layoutY="220.0" prefHeight="200.0" prefWidth="200.0" spacing="20.0" styleClass="bevel-grey" stylesheets="@application.css" visible="false">
                <children>
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="A" />
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="B" />
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="C" />
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="D" />
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="E" />
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="F" />
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="A" />
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="A" />
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="A" />
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="A" />
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="A" />
-                  <Button mnemonicParsing="false" prefHeight="50.0" prefWidth="50.0" text="A" />
+                  <Button mnemonicParsing="false" onAction="#goToMain" prefHeight="50.0" prefWidth="100.0" styleClass="bevel-grey-dynamic" stylesheets="@application.css" text="Main Menu" />
+                  <Button mnemonicParsing="false" onAction="#showHelp" prefHeight="50.0" prefWidth="100.0" styleClass="bevel-grey-dynamic" stylesheets="@application.css" text="Help" />
+                  <Button mnemonicParsing="false" onAction="#exitGame" prefHeight="50.0" prefWidth="100.0" styleClass="bevel-grey-dynamic" stylesheets="@application.css" text="Exit" />
                </children>
-            </HBox>
-            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="130.0" layoutY="35.0" prefHeight="75.0" prefWidth="700.0" text="Text will apear here" textAlignment="CENTER" textFill="WHITE" wrapText="true">
-               <font>
-                  <Font size="48.0" />
-               </font>
-            </Label>
-            <Button fx:id="redRoomBtn" layoutX="98.0" layoutY="317.0" mnemonicParsing="false" onAction="#toRedRoom" prefHeight="50.0" prefWidth="50.0">
-               <graphic>
-                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
-               </graphic>
-            </Button>
-            <Button layoutX="781.0" layoutY="312.0" mnemonicParsing="false" onAction="#toGreenRoom" prefHeight="50.0" prefWidth="50.0">
-               <graphic>
-                  <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" />
-               </graphic>
-            </Button>
-            <VBox fx:id="settingsBox" alignment="TOP_CENTER" layoutX="461.0" layoutY="201.0" prefHeight="200.0" prefWidth="100.0" style="-fx-background-color: grey;" visible="false">
-               <children>
-                  <Button mnemonicParsing="false" onAction="#closeApp" prefHeight="66.0" prefWidth="84.0" text="Button" />
-               </children>
+               <padding>
+                  <Insets bottom="20.0" top="20.0" />
+               </padding>
             </VBox>
+            <ImageView fx:id="helpImage" fitHeight="400.0" fitWidth="400.0" onMouseClicked="#hideHelp" pickOnBounds="true" preserveRatio="true" visible="false" x="280.0" y="120.0">
+               <image>
+                  <Image url="@../img/folder-icon.png" />
+               </image>
+            </ImageView>
          </children>
       </AnchorPane>
    </children>
-</VBox>
+</AnchorPane>

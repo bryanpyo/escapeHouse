@@ -55,28 +55,6 @@
         linear-gradient(#fcfcfc 0%, #d9d9d9 20%, #d6d6d6 100%),
         linear-gradient(#d2d2d2 0%, #eaeaea 50%);
 }
-.test{
-	-fx-background-color: 
-        linear-gradient(#f2f2f2, #d6d6d6),
-        linear-gradient(#fcfcfc 0%, #d9d9d9 20%, #d6d6d6 100%),
-        linear-gradient(#dddddd 0%, #f6f6f6 50%);
-    -fx-background-radius: 8,7,6;
-    -fx-background-insets: 0,1,2;
-    -fx-text-fill: black;
-    -fx-effect: dropshadow( three-pass-box , rgba(0,0,0,0.6) , 5, 0.0 , 0 , 1 );
-}
-.test:hover{
-	-fx-background-color: 
-        linear-gradient(#f2f2f2, #d6d6d6),
-        linear-gradient(#fcfcfc 0%, #d9d9d9 20%, #d6d6d6 100%),
-        linear-gradient(#e6e6e6 0%, #fafafa 50%);
-}
-.test:active{
-	-fx-background-color: 
-        linear-gradient(#f2f2f2, #d6d6d6),
-        linear-gradient(#fcfcfc 0%, #d9d9d9 20%, #d6d6d6 100%),
-        linear-gradient(#d2d2d2 0%, #eaeaea 50%);
-}
 .glass-grey {
     -fx-background-color: 
         #c3c4c4,
