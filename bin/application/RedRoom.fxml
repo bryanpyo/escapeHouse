@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="640.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.RedRoomController">
+   <children>
+      <AnchorPane fx:id="mainPane" prefHeight="640.0" prefWidth="960.0">
+         <children>
+            <ImageView fitHeight="640.0" fitWidth="960.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../img/Red-Room.jpg" />
+               </image>
+            </ImageView>
+            <Button fx:id="blueRoom" layoutX="817.0" layoutY="442.0" mnemonicParsing="false" onAction="#goToBlue" text="Go to Blue Room" />
+            <ButtonBar prefHeight="35.0" prefWidth="960.0">
+               <buttons>
+                  <Button fx:id="settingsBtn" mnemonicParsing="false" onAction="#showSettingsMenu" prefHeight="35.0" prefWidth="25.0" styleClass="settingsBtn" stylesheets="@application.css">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/Gears-PNG-File.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </buttons>
+            </ButtonBar>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="otherPane" prefHeight="640.0" prefWidth="960.0" visible="false">
+         <children>
+            <ButtonBar prefHeight="35.0" prefWidth="960.0">
+               <buttons>
+                  <Button fx:id="otherSettingsBtn" mnemonicParsing="false" onAction="#showSettingsMenu" prefHeight="35.0" prefWidth="25.0" styleClass="settingsBtn" stylesheets="@application.css">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/Gears-PNG-File.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </buttons>
+            </ButtonBar>
+            <VBox fx:id="settingsMenu" alignment="TOP_CENTER" layoutX="380.0" layoutY="220.0" prefHeight="200.0" prefWidth="200.0" spacing="50.0" styleClass="bevel-grey" stylesheets="@application.css" visible="false">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#goToMain" prefHeight="50.0" prefWidth="100.0" styleClass="bevel-grey-dynamic" stylesheets="@application.css" text="Main Menu" />
+                  <Button mnemonicParsing="false" onAction="#exitGame" prefHeight="50.0" prefWidth="100.0" styleClass="bevel-grey-dynamic" stylesheets="@application.css" text="Exit" />
+               </children>
+               <padding>
+                  <Insets bottom="20.0" top="20.0" />
+               </padding>
+            </VBox>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+   <children>
+      <Button layoutX="400.0" layoutY="325.0" mnemonicParsing="false" onAction="#start" prefHeight="50.0" prefWidth="100.0" text="START">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="otherBtn" layoutX="400.0" layoutY="400.0" mnemonicParsing="false" onAction="#printGreeting" prefHeight="50.0" prefWidth="100.0" text="OTHER" visible="false">
+         <font>
+            <Font name="Times New Roman Bold" size="18.0" />
+         </font></Button>
+      <Button layoutX="839.0" layoutY="11.0" mnemonicParsing="false" onAction="#CloseApp" prefHeight="30.0" prefWidth="50.0" text="EXIT" textAlignment="CENTER" textFill="RED">
+         <font>
+            <Font name="Times New Roman Bold" size="13.0" />
+         </font>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </Button>
+      <Button layoutX="607.0" layoutY="298.0" mnemonicParsing="false" onAction="#makeVisible" text="show" />
+      <Button layoutX="607.0" layoutY="350.0" mnemonicParsing="false" onAction="#makeNotVisible" text="Hide" />
+   </children>
+</AnchorPane>
